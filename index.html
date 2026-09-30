@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projeto Acessível e Otimizado</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+  <header>
+    <nav id="menu-navegacao" aria-label="Navegação principal">
+      <a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
+      <a href="#home">Início</a>
+      <a href="#sobre">Sobre</a>
+      <button id="theme-toggle" aria-label="Alternar modo escuro">Alternar Tema</button>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <section id="home">
+      <h1>Desenvolvimento Web Acessível</h1>
+      <p>Aplicação focada em acessibilidade, navegabilidade por teclado, contraste adequado e alto desempenho.</p>
+
+      <picture>
+        <source srcset="/src/assets/hero.png" type="image/png">
+        <img src="/src/assets/hero.png" alt="Exemplo de interface web responsiva e acessível" loading="lazy" width="800" height="450">
+      </picture>
+    </section>
+
+    <section id="sobre">
+      <h2>Formulário de Entrada</h2>
+      <form id="formulario-contato">
+        <div class="field-group">
+          <label for="nome">Nome completo:</label>
+          <input type="text" id="nome" name="nome" required>
+        </div>
+
+        <div class="field-group">
+          <label for="email">E-mail:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="field-group">
+          <label for="mensagem">Mensagem:</label>
+          <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary">Enviar</button>
+        <button type="button" id="open-modal" class="btn-secondary">Abrir Modal</button>
+      </form>
+    </section>
+  </main>
+
+  <div id="modal-confirmacao" class="modal-overlay" hidden role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-content">
+      <h2 id="modal-title">Janela Modal de Confirmação</h2>
+      <p>Confirme a sua ação para prosseguir com o envio dos dados.</p>
+      <div class="modal-actions">
+        <button id="confirm-modal" class="btn-primary">Confirmar</button>
+        <button id="close-modal" class="btn-secondary">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
